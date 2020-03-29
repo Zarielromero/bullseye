@@ -1,0 +1,28 @@
+import turtle
+import random
+t = turtle.Turtle();t.hideturtle();t.penup()
+x = 1
+
+def draw_circ():
+  xpos = int(input("Where will you put X?"));ypos = int(input("Where will you put Y?"))
+  for i in range(10):
+
+    ring = random.randint(1, 4)
+    if ring == 1:
+      color = ("black")
+    elif ring == 2:
+      color = "dark blue"
+    elif ring == 3:
+      color = "red"
+    elif ring == 4:
+      color = "green"
+    global x
+    t.setpos(xpos ,ypos + 20*x)
+    t.color(color)
+    t.begin_fill()
+    t.circle(200 - 20*x)
+    t.end_fill()
+    
+    x = x + 1
+
+draw_circ()
